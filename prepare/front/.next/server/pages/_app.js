@@ -121,7 +121,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-dev-runtime */ "react/jsx-dev-runtime");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\\uC11C\uC9C4\uC6C5\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\react-nodebird-lecture-re\\prepare\\front\\pages\\_app.js";
+var _jsxFileName = "C:\\Users\\\uC560\uB4DC\uD2B8\uB77C\uC774\uBE0C\\Desktop\\react-nodebird-re\\prepare\\front\\pages\\_app.js";
 
 
 
