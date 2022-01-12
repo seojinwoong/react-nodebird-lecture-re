@@ -23,7 +23,7 @@ const LoginForm = () => {
     // const style = useMemo(() => ({ marginTop: 10 }), []);
 
     const onSubmitForm = useCallback(() => {
-        dispatch(loginRequestAction({id, password}));
+        dispatch(loginRequestAction({email, password}));
     }, [email, password]);
 
     return (
