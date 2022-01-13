@@ -1,15 +1,18 @@
 import { useState, useCallback } from 'react';
 import { Button, Card, Popover, Avatar, List, Comment } from 'antd';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { HeartTwoTone, HeartOutlined, RetweetOutlined, MessageOutlined, EllipsisOutlined } from '@ant-design/icons';
 import PostImages from '../components/PostImages';
 import CommentForm from '../components/CommentForm';
 import PostCardContent from '../components/PostCardContent';
+import { REMOVE_POST_REQUEST } from '../reducers/post';
 
 const PostCard = ({ post }) => {
-    
+    const dispatch = useDispatch();
+
     const { me } = useSelector((state) => state.user);
+    const { removePostLoading } = useSelector((state) => state.post);
     const id = me && me.id;
     // const id = me?.id; 위와 같음 . 새로운 문법 => 옵셔널 체이닝
     //  위의 두줄을 이렇게도 가능 (옵셔널 체이닝을 통해서)
@@ -22,6 +25,13 @@ const PostCard = ({ post }) => {
     }, []);
     const onToggleComment = useCallback(() => {
         setCommentFormOpened((prev) => !prev);
+    }, []);
+
+    const onRemovePost = useCallback(() => {
+        dispatch({
+            type: REMOVE_POST_REQUEST,
+            data: post.id,
+        })
     }, []);
 
     return (
@@ -39,7 +49,7 @@ const PostCard = ({ post }) => {
                             {id && post.User.id === id ? (
                                 <>
                                     <Button>수정</Button>
-                                    <Button type='danger'>삭제</Button>
+                                    <Button type='danger' loading={removePostLoading} onClick={onRemovePost}>삭제</Button>
                                 </>
                             ) : (<Button>신고</Button>)}
                         </Button.Group>
